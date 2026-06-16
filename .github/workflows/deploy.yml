@@ -15,4 +15,7 @@ jobs:
       - name: Build Docker
         run: |
           cd /home/bigul/CI-CD-pipeline
+          git fetch origin main
+          git reset --hard origin/master
           docker compose up -d --build
+	  docker image prune -f
